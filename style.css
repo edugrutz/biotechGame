@@ -1,0 +1,27 @@
+.progress-container {
+    width: 50%;
+    background-color: #f0f0f0;
+  }
+  
+  .progress-bar {
+    width: 0; /* Começa com 0% de largura */
+    height: 20px;
+    background-color: #4caf50;
+  }
+  
+.perfil{
+  margin-left: 80%;
+}
+
+  .foto{
+    width: 80px;
+  }
+
+  .mapa{
+    border-style: solid;
+    position: fixed;
+  }
+
+  html{
+    height: 1000px;
+  }
