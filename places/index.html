@@ -7,17 +7,41 @@
     <link rel="stylesheet" href="style.css">
     
 </head>
-<body>
-    <div class="perfil">
-        <img class="foto" src="perfil.png"> 
-    </div><br>
+<body onLoad="changePlace()">
+    <h1>Vida de um biotecnologista</h1>
 
+    <div class="perfil">
+        <h4 style="margin-left: 40%;">Seu perfil:</h4>
+        <h5 id="status"></h5>
+        <img class="foto" src="/biotechGame/assets/perfil.png">
+        
+    </div>
+
+    <div class="inventory">
+      <h5>Inventário:</h5>
+      <label id="inv"></label>
+      
+    </div> 
+
+    <div class="mapa">
+        <h1>Mapa</h1>
+        <button id="casa" onclick="travelTo(this.id)">Casa</button><br><br>
+        <button id="">Praça da cidade</button><br><br>
+        <button id="prefeitura">Prefeitura</button><br><br>
+        <button id="laboratorio">Laboratório suspeito da esquina</button><br><br>
+        <button id="mercado" onclick="travelTo(this.id)">Mercado</button><br>
+      </div><br>
+
+      <button id="teste">teste</button>
+
+    <!--
     <div class="progress-container">
         <div class="progress-bar" id="myProgressBar"></div>
       </div><br>
       <button onclick="startProgress()">Iniciar Progresso</button>
-      
+      -->
+    
 
-    <script src="index.js" ></script>
+    <script src="script.js" ></script> 
 </body>
 </html>

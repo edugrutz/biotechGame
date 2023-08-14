@@ -39,9 +39,23 @@ function startProgress() {
   }
 }
 
-function goToHome(){
-  localStorage.setItem('dinheiro', money); // Define o dinheiro no localStorage
-  window.location.href = "/places/casa.html"; // Redireciona para a página "casa.html"
+function travelTo(place){
+  localStorage.setItem('dinheiro', money); 
+  switch(place){
+
+    case "casa":
+      window.location.href = "casa.html";
+    break;
+
+    case "mercado":
+      window.location.href = "mercado.html";
+    break;
+
+    default:
+      window.alert("Não tem como ir pra aí.")
+    break;
+
+  }  
 }
 
 function changePlace(){
@@ -51,7 +65,16 @@ function changePlace(){
 
 function updateStatus(){
   document.getElementById("status").innerText = `Nome: ${username}\nProfissão: Biotecnologista\n\nDinheiro: ${money}`;
-  document.getElementById("inv").innerHTML = inventory;
+  document.getElementById("inv").innerHTML = showInventoryItems();
+}
+
+function showInventoryItems(){
+    itens = "";
+    for (item of inventory){
+      itens += item;
+    }
+
+    return itens;
 }
 
 function voltar(){

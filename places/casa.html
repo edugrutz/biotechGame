@@ -8,14 +8,21 @@
 </head>
 <body onLoad="changePlace()">
     <h1>Vida de um biotecnologista</h1>
+    <button onclick="voltar()">Voltar</button>
 
     <div class="perfil">
-        <h4 style="margin-left: 40%;">Seu perfil:</h4>
+        <h4 style="margin-left: 30%;">Seu perfil:</h4>
         <h5 id="status"></h5>
-        <img class="foto" src="perfil.png"> 
+        <img class="foto" src="/biotechGame/assets/perfil.png">
+        
     </div>
 
+    <div class="inventory">
+      <h5 style="margin: 100px;">Inventário:</h5>
+      <label id="inv"></label>
+      
+    </div> 
 
-    <script src="index.js" ></script>
+    <script src="script.js" ></script>
 </body>
 </html>

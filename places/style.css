@@ -4,13 +4,19 @@
   }
   
   .progress-bar {
-    width: 0; /* Começa com 0% de largura */
+    width: 0%;
     height: 20px;
     background-color: #4caf50;
   }
   
 .perfil{
-  margin-left: 80%;
+  position: fixed;
+  width: 300px;
+  border-style: solid;
+  border-radius: 20%;
+  padding: 10px;
+  top: 5%;
+  right: 5%;
 }
 
   .foto{
@@ -19,9 +25,10 @@
 
   .mapa{
     border-style: solid;
-    position: fixed;
+    margin-right: 50%;
+    padding: 20px;
   }
 
-  html{
-    height: 1000px;
+  .mercado{
+    margin-right: 50%;
   }
