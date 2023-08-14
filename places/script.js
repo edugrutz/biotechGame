@@ -2,6 +2,21 @@
 const username = "Eduardo";
 let money = 0;
 let progressInterval = null;
+let inventory = [];
+
+updateStatus();
+
+document.getElementById("teste").onclick= function(){
+  if (money >= 2){
+  inventory.push("Bolo");
+  money -= 2;
+  } else {
+    window.alert("Você não tem dinheiro suficiente.")
+  }
+  updateStatus();
+}
+
+
 
 function startProgress() {
   if (progressInterval === null) {
@@ -26,17 +41,20 @@ function startProgress() {
 
 function goToHome(){
   localStorage.setItem('dinheiro', money); // Define o dinheiro no localStorage
-  window.location.href = "casa.html"; // Redireciona para a página "casa.html"
+  window.location.href = "/places/casa.html"; // Redireciona para a página "casa.html"
 }
 
 function changePlace(){
   money = parseInt(localStorage.getItem('dinheiro')) || 0; // Recupera o dinheiro do localStorage
   updateStatus();
 }
- 
-  updateStatus();
 
 function updateStatus(){
   document.getElementById("status").innerText = `Nome: ${username}\nProfissão: Biotecnologista\n\nDinheiro: ${money}`;
+  document.getElementById("inv").innerHTML = inventory;
+}
+
+function voltar(){
+  window.history.back();
 }
 
