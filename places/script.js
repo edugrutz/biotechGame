@@ -3,10 +3,13 @@ const username = "Eduardo";
 let money = 0;
 let progressInterval = null;
 let inventory = [];
+let job = "Biotecnologista";
 
 updateStatus();
 
-document.getElementById("teste").onclick= function(){
+console.log("abaixo")
+
+function comprar(){
   if (money >= 2){
   inventory.push("Bolo");
   money -= 2;
@@ -15,8 +18,6 @@ document.getElementById("teste").onclick= function(){
   }
   updateStatus();
 }
-
-
 
 function startProgress() {
   if (progressInterval === null) {
@@ -38,7 +39,7 @@ function startProgress() {
     }, 10);
   }
 }
-
+console.log("abaixo")
 function travelTo(place){
   localStorage.setItem('dinheiro', money); 
   switch(place){
@@ -64,16 +65,17 @@ function changePlace(){
 }
 
 function updateStatus(){
-  document.getElementById("status").innerText = `Nome: ${username}\nProfissão: Biotecnologista\n\nDinheiro: ${money}`;
+  document.getElementById("status").innerHTML = `
+  <b>Nome:</b> ${username}<br>
+  <b>Profissão:</b> ${job}<br><br>
+  <b>Dinheiro:</b> ${money}`;
   document.getElementById("inv").innerHTML = showInventoryItems();
 }
 
 function showInventoryItems(){
     itens = "";
     for (item of inventory){
-      itens += item;
-    }
-
+      itens += `[${item}]<br>`;}
     return itens;
 }
 
@@ -81,3 +83,21 @@ function voltar(){
   window.history.back();
 }
 
+//Mercardinho
+const vendas = new Map([
+  ["Bolo",4],
+  ["Banana",2],
+  ["Suco de uva",3]
+]);
+
+let compras = [];
+
+document.getElementById("vendas").innerHTML = displayVendas();
+document.getElementById("compras").innerHTML = `<b>Meu carrinho:</b> ${compras}`;
+
+function displayVendas(){
+  let vendasItens = "";
+  vendas.forEach((value,item) => vendasItens += `${item} - R$ ${value},00<br><br>`);
+
+  return vendasItens;
+}
